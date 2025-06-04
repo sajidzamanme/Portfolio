@@ -9,7 +9,7 @@ const Hero = () => {
       >
         
         {/* Text Section */}
-        <div className="w-full flex flex-col items-center gap- lg:max-w-6/10 lg:items-start">
+        <div className="w-full flex flex-col items-center gap-3 lg:max-w-6/10 lg:items-start">
           <h1 className="text-5xl xl:text-7xl font-bold lg:text-6xl">
             I'm Sajid Zaman
           </h1>
