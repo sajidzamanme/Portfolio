@@ -6,6 +6,8 @@ const SkillsBar = () => {
                    text-black gap-3 py-8"
       >
         <h1 className="text-5xl font-bold">Skills</h1>
+
+        {/* Skills Section shown by logos ig */}
       </div>
     </div>
   );

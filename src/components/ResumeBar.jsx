@@ -7,8 +7,12 @@ const ResumeBar = () => {
         className="container mx-auto h-full flex flex-col items-center justify-center
                     gap-3 py-8"
       >
-        <h1>social media logos</h1>
-        <h1 className="text-4xl font-bold md:text-5xl">Know more About me</h1>
+        
+        {/* Add social media logos */}
+
+        <h1 className="text-4xl font-bold md:text-5xl">Know more about me</h1>
+
+        {/* Default way to link to document, check if there is any react way */}
         <a
           href={resume}
           target="__blank"

@@ -6,6 +6,8 @@ const ContactBar = () => {
                    text-black gap-3 py-8"
       >
         <h1 className="text-5xl font-bold">Contact</h1>
+
+        {/* Add Contact Form */}
       </div>
     </div>
   );
