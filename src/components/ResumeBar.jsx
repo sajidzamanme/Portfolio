@@ -5,7 +5,7 @@ import { MdEmail } from "react-icons/md";
 
 const ResumeBar = () => {
   return (
-    <div className="h-[20rem] w-full bg-black text-white px-5">
+    <section id="resume" className="h-[20rem] w-full bg-black text-white px-5">
       <div
         className="container mx-auto h-full flex flex-col items-center justify-center
                     gap-3 py-8"
@@ -41,7 +41,7 @@ const ResumeBar = () => {
           Download Resume
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

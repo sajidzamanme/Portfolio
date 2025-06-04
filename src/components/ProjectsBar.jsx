@@ -2,9 +2,9 @@ import ProjectCard from "./ProjectCard";
 
 const ProjectsBar = () => {
   return (
-    <div className="w-full h-[22rem] bg-black text-white px-5">
+    <section id="projects" className="w-full h-[22rem] bg-black flex items-center text-white px-5">
       <div
-        className="container mx-auto flex flex-col items-center justify-start
+        className="container mx-auto flex flex-col items-center justify-center
                     gap-8 py-8"
       >
         <h1 className="text-2xl font-semibold border-b-2 border-white px-1 py-1">
@@ -20,8 +20,15 @@ const ProjectsBar = () => {
           <ProjectCard />
           <ProjectCard />
         </div>
+
+        <button
+          type="submit"
+          className="text-lg text-black font-semibold bg-white py-3 px-5"
+        >
+          View All Projects
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 
