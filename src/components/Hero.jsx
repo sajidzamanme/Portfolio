@@ -2,16 +2,21 @@ import HeroImg from "../assets/test1.svg";
 
 const Hero = () => {
   return (
-    <div className="w-full flex items-center px-5 lg:h-[35rem]">
+    <main className="w-full h-[35rem] flex items-center px-5">
       <div
         className="container mx-auto flex flex-col items-center justify-start gap-8 py-8
                   lg:flex-row lg:justify-between"
       >
-        
         {/* Text Section */}
         <div className="w-full flex flex-col items-center gap-3 lg:max-w-6/10 lg:items-start">
           <h1 className="text-5xl xl:text-7xl font-bold lg:text-6xl">
-            I'm Sajid Zaman
+            I'm{" "}
+            <span
+              className="bg-gradient-to-r from-[#3494E6] to-[#EC6EAD]
+                              bg-clip-text text-transparent"
+            >
+              Sajid Zaman
+            </span>
           </h1>
           <h1 className="text-2xl xl:text-3xl font-medium">
             A full-Stack Developer
@@ -27,7 +32,7 @@ const Hero = () => {
           />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

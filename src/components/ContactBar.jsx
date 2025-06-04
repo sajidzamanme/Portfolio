@@ -7,6 +7,9 @@ const ContactBar = () => {
     message: "",
   });
 
+  // Send mail to me and a reply mail
+  // that I received to the sender
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
@@ -14,7 +17,10 @@ const ContactBar = () => {
   };
 
   return (
-    <div className="w-full h-[30rem] flex flex-row items-center px-5">
+    <section
+      id="contact"
+      className="w-full h-[30rem] flex flex-row items-center px-5"
+    >
       <div
         className="container mx-auto h-full flex flex-col items-center justify-center
                    text-black gap-8 py-8"
@@ -58,13 +64,13 @@ const ContactBar = () => {
           ></textarea>
           <button
             type="submit"
-            className="text-lg text-white font-semibold bg-black p-3 mt-3"
+            className="text-lg text-white font-semibold bg-black py-3 px-8 mt-3"
           >
             Submit
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 
