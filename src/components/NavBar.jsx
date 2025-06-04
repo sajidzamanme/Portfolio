@@ -4,7 +4,7 @@ const NavBar = () => {
       <div className="w-full container mx-auto flex items-center justify-between px-5">
         <h1 className="text-3xl font-bold sm:text-4xl">{"<SZ/>"}</h1>
 
-        <ul className="hidden items-center gap-3 text-lg font-medium pt-[3px] min-[30rem]:flex">
+        <ul className="hidden items-center gap-3 text-lg font-medium pt-[3px] min-[30rem]:flex md:gap-5 lg:gap-8">
           <li className="border-b-3 border-white hover:border-gray-300 ">
             Home
           </li>
