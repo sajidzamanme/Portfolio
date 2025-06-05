@@ -38,6 +38,7 @@ const ContactBar = () => {
           <input
             type="text"
             value={formData.name}
+            required
             className="h-[3rem] w-full border px-4"
             placeholder="Enter your name"
             onChange={(e) => {
@@ -47,6 +48,7 @@ const ContactBar = () => {
           <input
             type="email"
             value={formData.email}
+            required
             className="h-[3rem] w-full border px-4"
             placeholder="Enter your email"
             onChange={(e) => {
@@ -57,6 +59,7 @@ const ContactBar = () => {
             name="message"
             value={formData.message}
             id="message"
+            required
             className="h-[8rem] w-full border px-4 py-2.5"
             placeholder="Enter your message"
             onChange={(e) => {
