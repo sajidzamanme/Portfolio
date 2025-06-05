@@ -1,3 +1,4 @@
+import CustomBtn from "./CustomBtn";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsBar = () => {
@@ -21,12 +22,9 @@ const ProjectsBar = () => {
           <ProjectCard />
         </div>
 
-        <button
-          type="submit"
-          className="text-lg text-black font-semibold bg-white py-3 px-5"
-        >
+        <CustomBtn padding="py-3 px-5">
           View All Projects
-        </button>
+        </CustomBtn>
       </div>
     </section>
   );

@@ -2,6 +2,7 @@ import resume from "../assets/Sajid-Zaman-Resume.pdf";
 import { FaGithub } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import CustomBtn from "./CustomBtn";
 
 const ResumeBar = () => {
   return (
@@ -34,12 +35,9 @@ const ResumeBar = () => {
         <h1 className="text-4xl font-bold md:text-5xl">Know more about me</h1>
 
         {/* Button to Download Resume */}
-        <button
-          onClick={() => window.open(resume, "_blank")}
-          className="text-lg text-black font-semibold bg-white p-3 mt-1"
-        >
+        <CustomBtn onClick={() => window.open(resume, "_blank")}>
           Download Resume
-        </button>
+        </CustomBtn>
       </div>
     </section>
   );

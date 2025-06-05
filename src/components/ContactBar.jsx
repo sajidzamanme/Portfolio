@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CustomBtn from "./CustomBtn";
 
 const ContactBar = () => {
   const [formData, setFormData] = useState({
@@ -62,12 +63,9 @@ const ContactBar = () => {
               setFormData((prev) => ({ ...prev, message: e.target.value }));
             }}
           ></textarea>
-          <button
-            type="submit"
-            className="text-lg text-white font-semibold bg-black py-3 px-8 mt-3"
-          >
+          <CustomBtn colorScheme="blackBg" padding="py-3 px-8" margin="mt-3">
             Submit
-          </button>
+          </CustomBtn>
         </form>
       </div>
     </section>
