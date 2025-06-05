@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CustomBtn from "./CustomBtn";
 
 const ContactBar = () => {
   const [formData, setFormData] = useState({
@@ -37,6 +38,7 @@ const ContactBar = () => {
           <input
             type="text"
             value={formData.name}
+            required
             className="h-[3rem] w-full border px-4"
             placeholder="Enter your name"
             onChange={(e) => {
@@ -46,6 +48,7 @@ const ContactBar = () => {
           <input
             type="email"
             value={formData.email}
+            required
             className="h-[3rem] w-full border px-4"
             placeholder="Enter your email"
             onChange={(e) => {
@@ -56,18 +59,16 @@ const ContactBar = () => {
             name="message"
             value={formData.message}
             id="message"
+            required
             className="h-[8rem] w-full border px-4 py-2.5"
             placeholder="Enter your message"
             onChange={(e) => {
               setFormData((prev) => ({ ...prev, message: e.target.value }));
             }}
           ></textarea>
-          <button
-            type="submit"
-            className="text-lg text-white font-semibold bg-black py-3 px-8 mt-3"
-          >
+          <CustomBtn colorScheme="blackBg" padding="py-3 px-8" margin="mt-3">
             Submit
-          </button>
+          </CustomBtn>
         </form>
       </div>
     </section>
