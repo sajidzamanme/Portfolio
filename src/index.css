@@ -10,3 +10,12 @@ html {
 body {
   font-family: "Poppins", sans-serif, serif, "Times New Roman";
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
