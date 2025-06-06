@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CustomBtn from "./CustomBtn";
 import MiniProjectCard from "./MiniProjectCard";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowCircleLeft } from "react-icons/fa";
 import axios from "axios";
 
 const ProjectsBar = () => {
@@ -14,6 +15,16 @@ const ProjectsBar = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleScrollLeft = () => {
+    var slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft - 500;
+  };
+
+  const handleScrollRight = () => {
+    var slider = document.getElementById("slider");
+    slider.scrollLeft = slider.scrollLeft + 500;
   };
 
   useEffect(() => {
@@ -31,26 +42,44 @@ const ProjectsBar = () => {
         </h1>
 
         {/* Scrollable Projects Section */}
-        <div
-          className="relative w-full h-[50%] flex flex-row items-center overflow-auto
-          gap-8 p-1 no-scrollbar"
-        >
-          {/* Renders Project Cards from a json file (Later from a server) */}
-          {!projects
-            ? "Loading"
-            : projects.map((proj) => {
-                return <MiniProjectCard key={proj.id} project={proj} />;
-              })}
-
-          {/* Scroll Button */}
-          <div className="absolute -right-5 h-full z-50">
+        <div className="relative w-full h-full flex items-center">
+          {/* Scroll Left */}
+          <div className="absolute left-0 h-full z-50 select-none">
             <div
-              className="w-[5rem] h-full text-white flex items-center
+              className="w-[5rem] h-full text-white flex items-center justify-center
+                          bg-gradient-to-r from-black/80 to-white/0 group"
+            >
+              <FaArrowCircleLeft
+                size={50}
+                className="text-white bg-black rounded-4xl opacity-0 group-hover:opacity-100"
+                onClick={handleScrollLeft}
+              />
+            </div>
+          </div>
+
+          {/* Renders Project Cards from a json file (Later from a server) */}
+          <div
+            id="slider"
+            className="w-full h-full flex flex-row items-center overflow-auto
+          scroll-smooth gap-8 no-scrollbar"
+          >
+            {!projects
+              ? "Loading"
+              : projects.map((proj) => {
+                  return <MiniProjectCard key={proj.id} project={proj} />;
+                })}
+          </div>
+
+          {/* Scroll Right */}
+          <div className="absolute right-0 h-full z-50 select-none">
+            <div
+              className="w-[5rem] h-full text-white flex items-center justify-center
                           bg-gradient-to-r from-white/0 to-black/80 group"
             >
               <FaArrowCircleRight
                 size={50}
                 className="text-white bg-black rounded-4xl opacity-0 group-hover:opacity-100"
+                onClick={handleScrollRight}
               />
             </div>
           </div>
@@ -63,3 +92,5 @@ const ProjectsBar = () => {
 };
 
 export default ProjectsBar;
+
+// Fix scroll amount
