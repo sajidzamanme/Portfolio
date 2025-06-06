@@ -1,33 +1,49 @@
-const NavBar = () => {
+const NavBar = ({ refs }) => {
+  const handleClick = (addr) => {
+    const sectionRef = refs[addr];
+    if (sectionRef && sectionRef.current) {
+      sectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
+
   return (
-    <nav className="h-[4.5rem] w-full flex items-center justify-center shadow-md select-none">
+    <nav
+      ref={refs.navbar}
+      className="h-[4.5rem] w-full flex items-center justify-center shadow-md select-none"
+    >
       <div className="w-full container mx-auto flex items-center justify-between px-5">
         {/* Logo Text */}
         <h1 className="text-[2.25rem] font-bold sm:text-[2.5rem]">{"<SZ/>"}</h1>
 
         {/* Links (shown in devices larger than phones) */}
         <div className="hidden items-center gap-3 text-lg font-medium pt-[3px] min-[30rem]:flex sm:gap-4 md:gap-6 lg:gap-10">
-          <a href="" className="border-b-2 border-white hover:border-gray-400 ">
+          <button
+            onClick={() => handleClick("navbar")}
+            className="border-b-2 border-white hover:border-gray-400 "
+          >
             Home
-          </a>
-          <a
-            href="#projects"
+          </button>
+          <button
+            onClick={() => handleClick("projects")}
             className="border-b-2 border-white hover:border-gray-400 "
           >
             Projects
-          </a>
-          <a
-            href="#resume"
+          </button>
+          <button
+            onClick={() => handleClick("resume")}
             className="border-b-2 border-white hover:border-gray-400 "
           >
             Resume
-          </a>
-          <a
-            href="#contact"
+          </button>
+          <button
+            onClick={() => handleClick("contact")}
             className="border-b-2 border-white hover:border-gray-400 "
           >
             Contact
-          </a>
+          </button>
         </div>
 
         {/* Menu Button (only shown when in phone) */}

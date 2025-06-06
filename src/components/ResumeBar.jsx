@@ -4,9 +4,9 @@ import { FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import CustomBtn from "./CustomBtn";
 
-const ResumeBar = () => {
+const ResumeBar = ({ ref }) => {
   return (
-    <section id="resume" className="h-[20rem] w-full bg-black text-white px-5">
+    <section ref={ref} className="h-[20rem] w-full bg-black text-white px-5">
       <div
         className="container mx-auto h-full flex flex-col items-center justify-center
                     gap-3 py-8"

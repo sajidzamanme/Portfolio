@@ -29,16 +29,23 @@ const MiniProjectCard = ({ project, onClick }) => {
           {project.description}
         </h3>
         <div className="w-full flex items-center gap-1 mt-1">
-          {project.techStack.map((tech) => {
-            if (tech == "react") return <FaReact size={25} />;
-            if (tech == "vuejs") return <FaVuejs size={25} />;
-            if (tech == "express") return <SiExpress size={25} />;
-            if (tech == "tailwindCss") return <SiTailwindcss size={25} />;
-            if (tech == "nodejs") return <FaNodeJs size={25} />;
-            if (tech == "mongodb") return <SiMongodb size={25} />;
-            if (tech == "javaScript") return <IoLogoJavascript size={25} />;
-            if (tech == "html") return <FaHtml5 size={25} />;
-            if (tech == "C") return <h1 className="text-xl font-bold">C</h1>;
+          {project.techStack.map((tech, index) => {
+            if (tech == "react") return <FaReact key={index} size={25} />;
+            if (tech == "vuejs") return <FaVuejs key={index} size={25} />;
+            if (tech == "express") return <SiExpress key={index} size={25} />;
+            if (tech == "tailwindCss")
+              return <SiTailwindcss key={index} size={25} />;
+            if (tech == "nodejs") return <FaNodeJs key={index} size={25} />;
+            if (tech == "mongodb") return <SiMongodb key={index} size={25} />;
+            if (tech == "javaScript")
+              return <IoLogoJavascript key={index} size={25} />;
+            if (tech == "html") return <FaHtml5 key={index} size={25} />;
+            if (tech == "C")
+              return (
+                <h1 key={index} className="text-xl font-bold">
+                  C
+                </h1>
+              );
           })}
         </div>
       </div>
