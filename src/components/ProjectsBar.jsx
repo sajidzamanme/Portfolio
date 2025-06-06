@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
 import CustomBtn from "./CustomBtn";
 import MiniProjectCard from "./MiniProjectCard";
 import { FaArrowCircleRight } from "react-icons/fa";
+import axios from "axios";
 
 const ProjectsBar = () => {
+  const [projects, setProjects] = useState([]);
+
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get("/projects.json");
+      setProjects(response.data.projects);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
   return (
     <section id="projects" className="w-full bg-black text-white px-5">
       <div
@@ -18,19 +35,18 @@ const ProjectsBar = () => {
           className="relative w-full h-[50%] flex flex-row items-center overflow-auto
           gap-8 p-1 no-scrollbar"
         >
-          {/* Render Project Cards from a json file (Later from a server) */}
-          <MiniProjectCard />
-          <MiniProjectCard />
-          <MiniProjectCard />
-          <MiniProjectCard />
-          <MiniProjectCard />
-          <MiniProjectCard />
+          {/* Renders Project Cards from a json file (Later from a server) */}
+          {!projects
+            ? "Loading"
+            : projects.map((proj) => {
+                return <MiniProjectCard key={proj.id} project={proj} />;
+              })}
 
           {/* Scroll Button */}
-          <div className="absolute right-0 h-full z-50">
+          <div className="absolute -right-5 h-full z-50">
             <div
-              className="w-[4rem] h-full text-white flex items-center
-                          bg-gradient-to-r from-white/0  to-black/80 group"
+              className="w-[5rem] h-full text-white flex items-center
+                          bg-gradient-to-r from-white/0 to-black/80 group"
             >
               <FaArrowCircleRight
                 size={50}

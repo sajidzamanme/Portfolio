@@ -13,20 +13,12 @@ const ResumeBar = () => {
       >
         {/* Social Media Links */}
         <div className="flex flex-row items-center gap-2">
-          <button
-            onClick={() =>
-              window.open("https://github.com/sajidzamanme", "_blank")
-            }
-          >
+          <a href="https://github.com/sajidzamanme" target="__blank">
             <FaGithub className="size-8" />
-          </button>
-          <button
-            onClick={() =>
-              window.open("https://www.linkedin.com/in/afnanzaman/", "_blank")
-            }
-          >
+          </a>
+          <a href="https://www.linkedin.com/in/afnanzaman/" target="__blank">
             <FaLinkedin className="size-8" />
-          </button>
+          </a>
           <a href="mailto:sajidzaman.2002.3@gmail.com">
             <MdEmail className="size-9" />
           </a>

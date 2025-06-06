@@ -1,3 +1,5 @@
+// Fix min and max height and width, also of images
+
 import cgpaCalcSS from "../assets/cgpaCalcSS.png";
 import { FaReact } from "react-icons/fa6";
 import { SiTailwindcss } from "react-icons/si";
@@ -20,9 +22,9 @@ const MiniProjectCard = ({ project, onClick }) => {
 
       {/* Text & icons */}
       <div className="w-full h-full flex flex-col items-start justify-start gap-1">
-        <h1 className="w-full text-xl font-bold">UIU CGPA Calculator</h1>
+        <h1 className="w-full text-xl font-bold">{project.name}</h1>
         <h3 className="w-full text-sm overflow-hidden">
-          CGPA Calculator for UIU Students
+          {project.description}
         </h3>
         <div className="w-full flex items-center gap-1">
           <FaReact size={25} />
