@@ -8,9 +8,6 @@ const ContactBar = () => {
     message: "",
   });
 
-  // Send mail to me and a reply mail
-  // that I received to the sender
-
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
@@ -24,7 +21,7 @@ const ContactBar = () => {
     >
       <div
         className="container mx-auto h-full flex flex-col items-center justify-center
-                   text-black gap-8 py-8"
+        text-black gap-8 py-8"
       >
         <h1 className="text-2xl font-semibold border-b-2 border-black px-1 py-1">
           Contact
@@ -76,3 +73,6 @@ const ContactBar = () => {
 };
 
 export default ContactBar;
+
+// Send mail to me and a reply mail
+// to notify I received to the sender

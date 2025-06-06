@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CustomBtn from "./CustomBtn";
 import MiniProjectCard from "./MiniProjectCard";
-import { FaArrowCircleRight } from "react-icons/fa";
-import { FaArrowCircleLeft } from "react-icons/fa";
+import { IoMdArrowDropright } from "react-icons/io";
+import { IoMdArrowDropleft } from "react-icons/io";
 import axios from "axios";
 
 const ProjectsBar = () => {
   const [projects, setProjects] = useState([]);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+  const sliderRef = useRef(null);
 
   const fetchProjects = async () => {
     try {
@@ -17,19 +20,37 @@ const ProjectsBar = () => {
     }
   };
 
+  const updateScrollButtons = () => {
+    const slider = sliderRef.current;
+    setAtStart(slider.scrollLeft === 0);
+    setAtEnd(
+      Math.ceil(slider.scrollLeft + slider.clientWidth) >= slider.scrollWidth
+    );
+  };
+
   const handleScrollLeft = () => {
-    var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft - 500;
+    sliderRef.current.scrollLeft -= 280;
   };
 
   const handleScrollRight = () => {
-    var slider = document.getElementById("slider");
-    slider.scrollLeft = slider.scrollLeft + 500;
+    sliderRef.current.scrollLeft += 280;
   };
 
   useEffect(() => {
     fetchProjects();
   }, []);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+    updateScrollButtons();
+    slider.addEventListener("scroll", updateScrollButtons);
+    window.addEventListener("resize", updateScrollButtons);
+    return () => {
+      slider.removeEventListener("scroll", updateScrollButtons);
+      window.removeEventListener("resize", updateScrollButtons);
+    };
+  }, [projects]);
 
   return (
     <section id="projects" className="w-full bg-black text-white px-5">
@@ -44,22 +65,24 @@ const ProjectsBar = () => {
         {/* Scrollable Projects Section */}
         <div className="relative w-full h-full flex items-center">
           {/* Scroll Left */}
-          <div className="absolute left-0 h-full z-50 select-none">
-            <div
-              className="w-[5rem] h-full text-white flex items-center justify-center
-                          bg-gradient-to-r from-black/80 to-white/0 group"
-            >
-              <FaArrowCircleLeft
-                size={50}
-                className="text-white bg-black rounded-4xl opacity-0 group-hover:opacity-100"
-                onClick={handleScrollLeft}
-              />
+          {!atStart && (
+            <div className="absolute left-0 h-full z-50 select-none">
+              <div
+                className="w-[4rem] h-full text-white flex items-center justify-center
+                          bg-gradient-to-r from-black/70 to-white/0 to-80% group"
+              >
+                <IoMdArrowDropleft
+                  size={50}
+                  className="text-white rounded-4xl opacity-50 group-hover:opacity-100"
+                  onClick={handleScrollLeft}
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Renders Project Cards from a json file (Later from a server) */}
           <div
-            id="slider"
+            ref={sliderRef}
             className="w-full h-full flex flex-row items-center overflow-auto
           scroll-smooth gap-8 no-scrollbar"
           >
@@ -71,18 +94,20 @@ const ProjectsBar = () => {
           </div>
 
           {/* Scroll Right */}
-          <div className="absolute right-0 h-full z-50 select-none">
-            <div
-              className="w-[5rem] h-full text-white flex items-center justify-center
-                          bg-gradient-to-r from-white/0 to-black/80 group"
-            >
-              <FaArrowCircleRight
-                size={50}
-                className="text-white bg-black rounded-4xl opacity-0 group-hover:opacity-100"
-                onClick={handleScrollRight}
-              />
+          {!atEnd && (
+            <div className="absolute right-0 h-full z-50 select-none">
+              <div
+                className="w-[4rem] h-full text-white flex items-center justify-center
+                          bg-gradient-to-r from-white/0 from-20% to-black/70 group"
+              >
+                <IoMdArrowDropright
+                  size={50}
+                  className="text-white rounded-4xl opacity-50 group-hover:opacity-100"
+                  onClick={handleScrollRight}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <CustomBtn padding="py-3 px-5">View All Projects</CustomBtn>
@@ -92,5 +117,3 @@ const ProjectsBar = () => {
 };
 
 export default ProjectsBar;
-
-// Fix scroll amount
