@@ -1,5 +1,3 @@
-// Add Hover Effect
-
 const CustomBtn = ({
   children = "Custom Button",
   type = "submit",
@@ -24,3 +22,5 @@ const CustomBtn = ({
 };
 
 export default CustomBtn;
+
+// Add Hover Effect

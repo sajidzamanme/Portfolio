@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "UIU CGPA Calculator",
+      "description": "CGPA Calculator for UIU Students",
+      "techStack": ["react", "tailwindCss", "javaScript", "html"],
+      "imgSrc": ""
+    },
+    {
+      "id": 2,
+      "name": "Cart To Home",
+      "description": "E-Commerce Website Using ReactJS",
+      "techStack": ["react", "tailwindCss", "zustand", "javaScript", "html"],
+      "imgSrc": ""
+    },
+    {
+      "id": 3,
+      "name": "Subscription Tracker",
+      "description": "Track all your subscriptions",
+      "techStack": [
+        "react",
+        "express",
+        "nodejs",
+        "mongodb",
+        "tailwindCss",
+        "javaScript",
+        "html"
+      ],
+      "imgSrc": ""
+    },
+    {
+      "id": 4,
+      "name": "Where To Hangout",
+      "description": "Find the perfect hangout spot in minutes",
+      "techStack": ["vuejs", "tailwindCss", "javaScript", "html"],
+      "imgSrc": ""
+    },
+    {
+      "id": 5,
+      "name": "Ticketing-System",
+      "description": "Simple command line based ticketing system",
+      "techStack": ["C"],
+      "imgSrc": ""
+    },
+    {
+      "id": 6,
+      "name": "Portfolio",
+      "description": "Basic Portfolio showcasing projects and skills",
+      "techStack": ["react", "tailwindCss", "javaScript", "html"],
+      "imgSrc": ""
+    }
+  ]
+}
