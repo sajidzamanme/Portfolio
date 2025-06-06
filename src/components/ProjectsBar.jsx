@@ -5,7 +5,7 @@ import { IoMdArrowDropright } from "react-icons/io";
 import { IoMdArrowDropleft } from "react-icons/io";
 import axios from "axios";
 
-const ProjectsBar = () => {
+const ProjectsBar = ({ ref }) => {
   const [projects, setProjects] = useState([]);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -53,7 +53,7 @@ const ProjectsBar = () => {
   }, [projects]);
 
   return (
-    <section id="projects" className="w-full bg-black text-white px-5">
+    <section ref={ref} className="w-full bg-black text-white px-5">
       <div
         className="container mx-auto h-full flex flex-col items-center justify-center
                     gap-6 py-8"

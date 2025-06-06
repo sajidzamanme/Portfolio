@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CustomBtn from "./CustomBtn";
 
-const ContactBar = () => {
+const ContactBar = ({ ref }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,7 +16,7 @@ const ContactBar = () => {
 
   return (
     <section
-      id="contact"
+      ref={ref}
       className="w-full h-[30rem] flex flex-row items-center px-5"
     >
       <div
