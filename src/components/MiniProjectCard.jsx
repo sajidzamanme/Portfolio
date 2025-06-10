@@ -10,7 +10,7 @@ import { FaVuejs } from "react-icons/fa6";
 const MiniProjectCard = ({ project, onClick }) => {
   return (
     <div
-      className="w-full min-w-[20rem] max-w-[20rem] border-2 border-white flex flex-col gap-2
+      className="w-full min-w-[20rem] max-w-[20rem] h-[16rem] border-2 border-white flex flex-col gap-2
       text-white rounded-2xl p-6 hover:scale-104"
       onClick={() => onClick(project)}
     >
@@ -37,7 +37,9 @@ const MiniProjectCard = ({ project, onClick }) => {
             );
         })}
       </div>
-      <h5 className="text-gray-500 text-center">Click to know more</h5>
+      <h5 className="text-gray-500 flex-grow flex items-end justify-center">
+        Click to know more
+      </h5>
     </div>
   );
 };
