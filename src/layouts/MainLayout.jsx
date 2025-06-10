@@ -9,6 +9,23 @@ const MainLayout = () => {
   const resumeRef = useRef(null);
   const contactRef = useRef(null);
 
+  const REFS = {
+    navbar: navbarRef,
+    projects: projectsRef,
+    resume: resumeRef,
+    contact: contactRef,
+  };
+
+  const scrollToLocation = (addr) => {
+    const sectionRef = REFS[addr];
+    if (sectionRef && sectionRef.current) {
+      sectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  };
+
   return (
     <div className="h-full min-h-dvh w-full flex flex-col items-center">
       <NavBar
@@ -19,6 +36,7 @@ const MainLayout = () => {
           resume: resumeRef,
           contact: contactRef,
         }}
+        scrollToLocation={scrollToLocation}
       />
       <Outlet
         context={{
