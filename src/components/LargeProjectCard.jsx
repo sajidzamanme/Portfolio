@@ -1,3 +1,4 @@
+import cgpaCalcSS from "/cgpaCalcSS.png";
 import { FaReact } from "react-icons/fa6";
 import { SiTailwindcss } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa6";
@@ -7,11 +8,11 @@ import { FaNodeJs } from "react-icons/fa6";
 import { SiMongodb } from "react-icons/si";
 import { FaVuejs } from "react-icons/fa6";
 
-const MiniProjectCard = ({ project, onClick }) => {
+const LargeProjectCard = ({ project, onClick }) => {
   return (
     <div
-      className="w-full min-w-[20rem] max-w-[20rem] border-2 border-white flex flex-col gap-2
-      text-white rounded-2xl p-6 hover:scale-104"
+      className="w-full min-w-xs max-w-4xl flex flex-col gap-2
+      bg-black text-white rounded-2xl p-6 hover:scale-102"
       onClick={() => onClick(project)}
     >
       {/* Text & icons */}
@@ -42,6 +43,4 @@ const MiniProjectCard = ({ project, onClick }) => {
   );
 };
 
-export default MiniProjectCard;
-
-// set height here (needs truclate etc too)
+export default LargeProjectCard;
