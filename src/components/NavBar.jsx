@@ -1,5 +1,24 @@
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
 const NavBar = ({ refs }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [targetRef, setTargetRef] = useState(null);
+
   const handleClick = (addr) => {
+    if (location.pathname == "/projects" && addr == "projects") {
+      return;
+    } else if (location.pathname != "/") {
+      setTargetRef(addr);
+      navigate("/");
+    }
+
+    scrollToLocation(addr);
+  };
+
+  const scrollToLocation = (addr) => {
     const sectionRef = refs[addr];
     if (sectionRef && sectionRef.current) {
       sectionRef.current.scrollIntoView({
@@ -8,6 +27,12 @@ const NavBar = ({ refs }) => {
       });
     }
   };
+
+  useEffect(() => {
+    if (targetRef) {
+      scrollToLocation(targetRef);
+    }
+  }, [location.pathname]);
 
   return (
     <nav

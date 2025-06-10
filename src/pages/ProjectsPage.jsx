@@ -34,3 +34,4 @@ const ProjectsPage = () => {
 export default ProjectsPage;
 
 // implement infinite scrolling
+// implement bento box styling

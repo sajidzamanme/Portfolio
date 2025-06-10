@@ -4,7 +4,7 @@ import MiniProjectCard from "./MiniProjectCard";
 import { IoMdArrowDropright } from "react-icons/io";
 import { IoMdArrowDropleft } from "react-icons/io";
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const scrollAmount = 320;
 
