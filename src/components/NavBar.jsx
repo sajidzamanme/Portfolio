@@ -1,18 +1,36 @@
-const NavBar = ({ refs }) => {
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+const NavBar = ({ refs, scrollToLocation }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const [targetRef, setTargetRef] = useState(null);
+
   const handleClick = (addr) => {
-    const sectionRef = refs[addr];
-    if (sectionRef && sectionRef.current) {
-      sectionRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
+    if (location.pathname == "/projects" && addr == "projects") {
+      return;
+    } else if (location.pathname != "/") {
+      setTargetRef(addr);
+      navigate("/");
+    } else {
+      scrollToLocation(addr);
     }
   };
+
+  useEffect(() => {
+    if (targetRef) {
+      setTimeout(() => {
+        scrollToLocation(targetRef);
+        setTargetRef(null);
+      }, 50);
+    }
+  }, [location.pathname]);
 
   return (
     <nav
       ref={refs.navbar}
-      className="h-[4.5rem] w-full flex items-center justify-center shadow-md select-none"
+      className="h-[4.5rem] w-full flex items-center justify-center shadow-sm select-none"
     >
       <div className="w-full container mx-auto flex items-center justify-between px-5">
         {/* Logo Text */}

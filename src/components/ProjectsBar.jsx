@@ -4,12 +4,17 @@ import MiniProjectCard from "./MiniProjectCard";
 import { IoMdArrowDropright } from "react-icons/io";
 import { IoMdArrowDropleft } from "react-icons/io";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const scrollAmount = 320;
 
 const ProjectsBar = ({ ref }) => {
   const [projects, setProjects] = useState([]);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
   const sliderRef = useRef(null);
+
+  const navigate = useNavigate();
 
   const fetchProjects = async () => {
     try {
@@ -29,11 +34,11 @@ const ProjectsBar = ({ ref }) => {
   };
 
   const handleScrollLeft = () => {
-    sliderRef.current.scrollLeft -= 280;
+    sliderRef.current.scrollLeft -= scrollAmount;
   };
 
   const handleScrollRight = () => {
-    sliderRef.current.scrollLeft += 280;
+    sliderRef.current.scrollLeft += scrollAmount;
   };
 
   useEffect(() => {
@@ -53,7 +58,7 @@ const ProjectsBar = ({ ref }) => {
   }, [projects]);
 
   return (
-    <section ref={ref} className="w-full bg-black text-white px-5">
+    <section ref={ref} className="w-full bg-black text-white">
       <div
         className="container mx-auto h-full flex flex-col items-center justify-center
                     gap-6 py-8"
@@ -69,12 +74,12 @@ const ProjectsBar = ({ ref }) => {
             <div className="absolute left-0 h-full z-50 select-none">
               <div
                 className="w-[4rem] h-full text-white flex items-center justify-center
-                          bg-gradient-to-r from-black/70 to-white/0 to-80% group"
+                          bg-gradient-to-r from-black/85 to-white/0 to-80% group"
+                onClick={handleScrollLeft}
               >
                 <IoMdArrowDropleft
                   size={50}
                   className="text-white rounded-4xl opacity-50 group-hover:opacity-100"
-                  onClick={handleScrollLeft}
                 />
               </div>
             </div>
@@ -83,7 +88,7 @@ const ProjectsBar = ({ ref }) => {
           {/* Renders Project Cards from a json file (Later from a server) */}
           <div
             ref={sliderRef}
-            className="w-full h-full flex flex-row items-center overflow-auto
+            className="w-full h-full flex flex-row items-center px-7 py-3 overflow-auto
           scroll-smooth gap-8 no-scrollbar"
           >
             {!projects
@@ -98,19 +103,21 @@ const ProjectsBar = ({ ref }) => {
             <div className="absolute right-0 h-full z-50 select-none">
               <div
                 className="w-[4rem] h-full text-white flex items-center justify-center
-                          bg-gradient-to-r from-white/0 from-20% to-black/70 group"
+                          bg-gradient-to-r from-white/0 from-20% to-black/85 group"
+                onClick={handleScrollRight}
               >
                 <IoMdArrowDropright
                   size={50}
                   className="text-white rounded-4xl opacity-50 group-hover:opacity-100"
-                  onClick={handleScrollRight}
                 />
               </div>
             </div>
           )}
         </div>
 
-        <CustomBtn padding="py-3 px-5">View All Projects</CustomBtn>
+        <CustomBtn padding="py-3 px-5" onClick={() => navigate("/projects")}>
+          View All Projects
+        </CustomBtn>
       </div>
     </section>
   );

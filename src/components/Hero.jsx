@@ -1,14 +1,18 @@
 import HeroImg from "../assets/HeroImg.svg";
+import dotLineBg from "../assets/dotLineBg-1.jpg";
 
 const Hero = () => {
   return (
-    <main className="w-full h-[35rem] flex items-center px-5">
+    <main
+      className={`w-full h-[35rem] flex items-center px-5 bg-center bg-contain mt-0.5`}
+      style={{ backgroundImage: `url(${dotLineBg})` }}
+    >
       <div
-        className="container mx-auto flex flex-col items-center justify-start gap-8 py-8
-                  lg:flex-row lg:justify-between"
+        className="container mx-auto flex flex-col items-center justify-start py-8
+                  gap-6 lg:flex-row lg:justify-between lg:gap-8"
       >
         {/* Text Section */}
-        <div className="w-full flex flex-col items-center gap-3 lg:max-w-6/10 lg:items-start">
+        <div className="w-full flex flex-col items-center gap-3 bg-white/75 lg:max-w-6/10 lg:items-start">
           <h1 className="text-5xl xl:text-7xl font-bold lg:text-6xl">
             I'm{" "}
             <span

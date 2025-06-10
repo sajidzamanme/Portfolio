@@ -3,7 +3,7 @@ import ProjectsBar from "../components/ProjectsBar";
 import ResumeBar from "../components/ResumeBar";
 import ContactBar from "../components/ContactBar";
 import SkillsBar from "../components/SkillsBar";
-import { useOutletContext } from "react-router";
+import { useOutletContext } from "react-router-dom";
 
 const HomePage = () => {
   const refs = useOutletContext();
