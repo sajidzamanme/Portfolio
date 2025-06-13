@@ -24,12 +24,14 @@ const MiniProjectCard = ({ project }) => {
       <div className="w-full flex items-center gap-1 mt-1">
         {project.techStack.map((tech, index) => {
           if (tech == "react") return <FaReact key={index} size={28} />;
-          if (tech == "vuejs") return <FaVuejs key={index} size={28} />;
+          if (tech == "vuejs")
+            return <FaVuejs key={index} size={28} className="-mr-1" />;
           if (tech == "express") return <SiExpress key={index} size={28} />;
           if (tech == "tailwindCss")
             return <SiTailwindcss key={index} size={28} />;
           if (tech == "nodejs") return <FaNodeJs key={index} size={28} />;
-          if (tech == "mongodb") return <SiMongodb key={index} size={28} />;
+          if (tech == "mongodb")
+            return <SiMongodb key={index} size={28} className="-mx-1" />;
           if (tech == "javaScript")
             return <IoLogoJavascript key={index} size={28} />;
           if (tech == "html") return <FaHtml5 key={index} size={28} />;
