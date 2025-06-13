@@ -47,6 +47,11 @@ const SkillsBar = () => {
           </div>
 
           <div className="bg-black flex items-center gap-2 border p-2 shadow-md">
+            <FaGolang size={30} className="text-white" />
+            <h1 className="text-lg text-white">Go</h1>
+          </div>
+
+          <div className="bg-black flex items-center gap-2 border p-2 shadow-md">
             <IoLogoJavascript size={30} className="text-white" />
             <h1 className="text-lg text-white">JavaScript</h1>
           </div>
@@ -54,11 +59,6 @@ const SkillsBar = () => {
           <div className="bg-black flex items-center gap-2 border p-2 shadow-md">
             <FaHtml5 size={30} className="text-white" />
             <h1 className="text-lg text-white">HTML</h1>
-          </div>
-
-          <div className="bg-black flex items-center gap-2 border p-2 shadow-md">
-            <FaGolang size={30} className="text-white" />
-            <h1 className="text-lg text-white">Go</h1>
           </div>
 
           <div className="bg-black flex items-center gap-2 border p-2 shadow-md">
