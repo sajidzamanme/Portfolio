@@ -12,7 +12,7 @@ const Hero = () => {
                   gap-6 lg:flex-row lg:justify-between lg:gap-8"
       >
         {/* Text Section */}
-        <div className="w-full flex flex-col items-center gap-3 bg-white/75 lg:max-w-6/10 lg:items-start">
+        <div className="w-full max-w-lg flex flex-col items-center gap-3 bg-white/75 lg:max-w-6/10 lg:items-start">
           <h1 className="text-5xl xl:text-7xl font-bold lg:text-6xl">
             I'm{" "}
             <span
@@ -22,8 +22,8 @@ const Hero = () => {
               Sajid Zaman
             </span>
           </h1>
-          <h1 className="text-2xl xl:text-3xl font-medium">
-            A full-Stack Developer
+          <h1 className="text-xl font-medium lg:text-2xl xl:text-3xl">
+            Full-Stack Developer | MERN | Go
           </h1>
         </div>
 
