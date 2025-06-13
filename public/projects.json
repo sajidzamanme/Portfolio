@@ -5,14 +5,18 @@
       "name": "UIU CGPA Calculator",
       "description": "CGPA Calculator for UIU Students",
       "techStack": ["react", "tailwindCss", "javaScript", "html"],
-      "imgSrc": "default"
+      "imgSrc": "default",
+      "github": "https://github.com/sajidzamanme/UIU_CGPA_Calculator",
+      "live": "https://uiu-cgpa-calc.vercel.app/"
     },
     {
       "id": 2,
       "name": "Cart To Home",
       "description": "E-Commerce Website Using ReactJS",
       "techStack": ["react", "tailwindCss", "zustand", "javaScript", "html"],
-      "imgSrc": "/cartToHomeSS.png"
+      "imgSrc": "/cartToHomeSS.png",
+      "github": "https://github.com/sajidzamanme/Cart_To_Home",
+      "live": "https://cart-to-home.vercel.app/"
     },
     {
       "id": 3,
@@ -27,28 +31,36 @@
         "javaScript",
         "html"
       ],
-      "imgSrc": "default"
+      "imgSrc": "default",
+      "github": "https://github.com/sajidzamanme/Subscription-Tracker",
+      "live": "default"
     },
     {
       "id": 4,
       "name": "Where To Hangout",
       "description": "Find the perfect hangout spot in minutes",
       "techStack": ["vuejs", "tailwindCss", "javaScript", "html"],
-      "imgSrc": "default"
+      "imgSrc": "default",
+      "github": "https://github.com/sajidzamanme/Where_To_Hangout",
+      "live": "https://where-to-hangout.vercel.app/"
     },
     {
       "id": 5,
       "name": "Ticketing-System",
       "description": "Simple command line based ticketing system",
       "techStack": ["C"],
-      "imgSrc": "default"
+      "imgSrc": "default",
+      "github": "https://github.com/sajidzamanme/Ticketing-System",
+      "live": "default"
     },
     {
       "id": 6,
       "name": "Portfolio",
       "description": "Basic Portfolio showcasing projects and skills",
       "techStack": ["react", "tailwindCss", "javaScript", "html"],
-      "imgSrc": "default"
+      "imgSrc": "default",
+      "github": "https://github.com/sajidzamanme/Portfolio",
+      "live": "default"
     }
   ]
 }

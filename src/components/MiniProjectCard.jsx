@@ -7,12 +7,16 @@ import { FaNodeJs } from "react-icons/fa6";
 import { SiMongodb } from "react-icons/si";
 import { FaVuejs } from "react-icons/fa6";
 
-const MiniProjectCard = ({ project, onClick }) => {
+const MiniProjectCard = ({ project }) => {
+  const handleClick = () => {
+    window.open(project.github);
+  };
+
   return (
     <div
       className="w-full min-w-[20rem] max-w-[20rem] h-[16rem] border-2 border-white flex flex-col gap-2
       text-white rounded-2xl p-6 hover:scale-104"
-      onClick={() => onClick(project)}
+      onClick={handleClick}
     >
       {/* Text & icons */}
       <h1 className="w-full text-3xl font-semibold">{project.name}</h1>
