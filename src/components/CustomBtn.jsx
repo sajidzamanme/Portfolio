@@ -13,7 +13,7 @@ const CustomBtn = ({
         colorScheme === "whiteBg"
           ? "text-black bg-white"
           : "text-white bg-black"
-      } ${padding} ${margin}`}
+      } ${padding} ${margin} hover:scale-102`}
       onClick={onClick ? onClick : null}
     >
       {children}
