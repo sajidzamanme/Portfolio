@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const NavBar = ({ refs, scrollToLocation }) => {
+const NavBar = ({ refs, scrollToLocation, setIsMenuOpen }) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -65,7 +65,7 @@ const NavBar = ({ refs, scrollToLocation }) => {
         </div>
 
         {/* Menu Button (only shown when in phone) */}
-        <div className="flex flex-col gap-2 min-[30rem]:hidden">
+        <div onClick={() => setIsMenuOpen(true)} className="flex flex-col gap-2 min-[30rem]:hidden">
           <span className="h-[3px] w-[2rem] bg-black"></span>
           <span className="h-[3px] w-[2rem] bg-black"></span>
           <span className="h-[3px] w-[2rem] bg-black"></span>
