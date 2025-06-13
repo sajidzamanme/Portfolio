@@ -71,7 +71,7 @@ const ProjectsBar = ({ ref }) => {
         <div className="relative w-full h-full flex items-center">
           {/* Scroll Left */}
           {!atStart && (
-            <div className="absolute left-0 h-full z-50 select-none">
+            <div className="absolute left-0 h-full z-40 select-none">
               <div
                 className="w-[4rem] h-full text-white flex items-center justify-center
                           bg-gradient-to-r from-black/85 to-white/0 to-80% group"
@@ -100,7 +100,7 @@ const ProjectsBar = ({ ref }) => {
 
           {/* Scroll Right */}
           {!atEnd && (
-            <div className="absolute right-0 h-full z-50 select-none">
+            <div className="absolute right-0 h-full z-40 select-none">
               <div
                 className="w-[4rem] h-full text-white flex items-center justify-center
                           bg-gradient-to-r from-white/0 from-20% to-black/85 group"
