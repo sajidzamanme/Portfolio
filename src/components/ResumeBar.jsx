@@ -24,7 +24,9 @@ const ResumeBar = ({ ref }) => {
           </a>
         </div>
 
-        <h1 className="text-4xl font-bold md:text-5xl">Know more about me</h1>
+        <h1 className="text-4xl font-bold text-center md:text-5xl">
+          Know more about me
+        </h1>
 
         {/* Button to Download Resume */}
         <CustomBtn onClick={() => window.open(resume, "_blank")}>
