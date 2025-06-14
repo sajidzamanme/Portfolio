@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { IoMdCloseCircle } from "react-icons/io";
 
 const MobileMenu = ({ refs, scrollToLocation, setIsMenuOpen }) => {
   const location = useLocation();
@@ -34,11 +35,15 @@ const MobileMenu = ({ refs, scrollToLocation, setIsMenuOpen }) => {
         className="z-45 fixed h-full w-full bg-black/40"
       ></div>
       <div className="z-50 fixed top-0 right-0 h-full w-[80%] bg-white">
-        <div className="h-full flex flex-col items-center justify-center gap-4 text-3xl font-semibold">
-          <button onClick={() => handleClick("navbar")}>Home</button>
-          <button onClick={() => handleClick("projects")}>Projects</button>
-          <button onClick={() => handleClick("resume")}>Resume</button>
-          <button onClick={() => handleClick("contact")}>Contact</button>
+        <div className="h-full flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center text-3xl font-semibold gap-3">
+            <button onClick={() => handleClick("navbar")}>Home</button>
+            <button onClick={() => handleClick("projects")}>Projects</button>
+            <button onClick={() => handleClick("resume")}>Resume</button>
+            <button onClick={() => handleClick("contact")}>Contact</button>
+
+            <IoMdCloseCircle onClick={() => setIsMenuOpen(false)} size={40} />
+          </div>
         </div>
       </div>
     </>
