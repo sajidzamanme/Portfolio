@@ -16,7 +16,7 @@ const AchievementBar = () => {
             </h1>
             <ul className="list-disc pl-6">
               <li>100% Scholarship for 2 semesters</li>
-              <li>50% Scholarship for 2 semesters</li>
+              <li>50% Scholarship for 1 semesters</li>
               <li>25% Scholarship for 2 semesters</li>
             </ul>
           </div>
